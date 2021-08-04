@@ -14,26 +14,30 @@ class TaskServices {
     }
     checkTask(index) {
         let taskComplete = '';
-        this.arrTask.slice(index, index + 1)
-
-        this.arrTaskComplete = [...this.arrTaskComplete, ...taskComplete];
-        this.deleteTask(index)
+        taskComplete= this.arrTask.slice(index, index + 1)  
+ 
+        this.arrTaskComplete = [...this.arrTaskComplete,...taskComplete];
+        this.deleteTask(index)  
+        // console.log(taskComplete)
+        
+        
     }
     checkAllTask() {
-        let taskComplete = ''
+        let taskComplete = '';
         taskComplete = this.arrTask.slice(0)
         this.arrTaskComplete = [...this.arrTaskComplete, ...taskComplete]
         this.arrTask = []
     }
     sortAZ() {
-
-        this.arrTask.sort((a, b) => a.task.localeCompare(b.task))
-        this.arrTaskCompleted.sort((a, b) => a.task.localeCompare(b.task))
+        this.arrTask.join();
+        this.arrTask.sort();
+        console.log(this.arrTask)
+        
+        // this.arrTaskCompleted.sort((a, b) => a.item.localeCompare(b.item))
     }
     sortZA() {
-
-        this.arrTask.reverse((a, b) => a.task.localeCompare(b.task))
-        this.arrTaskCompleted.reverse((a, b) => a.task.localeCompare(b.task))
+        this.arrTask.reverse((a, b) => a.item.localeCompare(b.item))
+        this.arrTaskCompleted.reverse((a, b) => a.item.localeCompare(b.item))
     }
 }
 export default TaskServices;
