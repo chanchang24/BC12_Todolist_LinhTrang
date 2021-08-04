@@ -29,15 +29,23 @@ class TaskServices {
         this.arrTask = []
     }
     sortAZ() {
-        this.arrTask.join();
-        this.arrTask.sort();
+        this.arrTask.sort(function(a, b) {
+            return a.item.localeCompare(b.item)
+        });
         console.log(this.arrTask)
-        
-        // this.arrTaskCompleted.sort((a, b) => a.item.localeCompare(b.item))
+        this.arrTaskComplete.sort(function(a, b) {
+            return a.item.localeCompare(b.item)
+        });
     }
     sortZA() {
-        this.arrTask.reverse((a, b) => a.item.localeCompare(b.item))
-        this.arrTaskCompleted.reverse((a, b) => a.item.localeCompare(b.item))
+        this.arrTask.reverse(function(a, b) {
+            return a.item.localeCompare(b.item)
+        });
+        console.log(this.arrTask)
+        this.arrTaskComplete.reverse(function(a, b) {
+            return a.item.localeCompare(b.item)
+        });
+       
     }
 }
 export default TaskServices;

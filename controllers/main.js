@@ -75,8 +75,13 @@ const sortAZ=() => {
     taskServices.sortAZ();
     renderAll()
 }
-
 getEle('two').addEventListener('click',sortAZ);
+//ham sap xep Z-A
+const sortZA=() => {
+    taskServices.sortZA();
+    renderAll();
+}
+getEle('three').addEventListener('click',sortZA);
 //ham lay value
 const getTask = () => {
     let newTask = getEle('newTask').value;
