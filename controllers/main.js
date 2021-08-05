@@ -29,12 +29,16 @@ const renderTask = (arrTask) => {
     let content = ' ';
     arrTask.map((task, index) => {
         content += `
-            <li class=" form-checkbox custom-control custom-checkbox">
-                <input class="custom-control-input " onclick="checkTaskComplete(${index})" "type="checkbox"  id="checkTask-${index}">
-                <label class="custom-control-label"  for="checkTask-${index}">
+            <li class="todo" >
+                
+                <span >
                     ${task.item}
-                </label>
-                <button type="button" onclick="deleteTaskComplete(${index})"  class="btn btn-scusses">X</button>
+                </span>
+                <div class="buttons">
+                <button type="button" class="btn  " onclick="checkTaskComplete(${index})" "><i class="fa fa-check-circle complete"></i></button>
+                <button type="button" onclick="deleteTask(${index})"  class="btn  "><i class="fa fa-trash remove"></i></button>
+                </div>
+                
             </li>
             
         `
@@ -49,12 +53,12 @@ const renderTaskComplete = (arrTaskComplete) => {
     let content = '';
     arrTaskComplete.map((task, index) => {
        return content += `
-        <li >
+        <li class="todo#completed">
        
         <label class=" completed"  for="checkTask-${index}">
             ${task.item}
         </label>
-        <button type="button" onclick="deleteTaskComplete(${index})"  class="btn btn-scusses">X</button>
+        <button type="button" onclick="deleteTaskComplete(${index})"  class="btn buttons "><i class="fa fa-trash remove"></i></button>
         </li>
     
         `
